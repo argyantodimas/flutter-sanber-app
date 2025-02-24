@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sanberappflutter/widget/counter.dart';
+import 'package:sanberappflutter/widget/tugas-8.dart';
+// import 'package:sanberappflutter/widget/counter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.redAccent),
+        primaryColor: Colors.amberAccent,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
       // home: const Counter(),
@@ -60,17 +62,23 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(child: Tugas8()),
+    );
+  }
+
+  /*
+	Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -132,6 +140,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             SizedBox(height: 20), // Space between rows
+            SizedBox(
+              height: 100,
+              child: Image.asset('assets/images/paddy-field.jpg'),
+            ), // Space between rows
             SizedBox(height: 100, child: Counter()),
           ],
         ),
@@ -143,4 +155,5 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+	*/
 }
